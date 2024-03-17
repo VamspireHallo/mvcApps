@@ -1,27 +1,17 @@
 package mvc;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Model {
-    private String fileName;
+public class Model {
     private boolean unsavedChanges;
-    private PropertyChangeSupport propertyChangeSupport;
+    private String fileName;
+    private List<Subscriber> subscribers;
 
     public Model() {
-        fileName = null;
-        unsavedChanges = false;
-        propertyChangeSupport = new PropertyChangeSupport(this);
-    }
-
-    // Getters and setters for fileName and unsavedChanges
-
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+        this.unsavedChanges = false;
+        this.fileName = null;
+        this.subscribers = new ArrayList<>();
     }
 
     public boolean getUnsavedChanges() {
@@ -30,28 +20,34 @@ public abstract class Model {
 
     public void setUnsavedChanges(boolean unsavedChanges) {
         this.unsavedChanges = unsavedChanges;
+        notifySubscribers();
     }
 
-    // Method to fire property change event
-    protected void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
-        propertyChangeSupport.firePropertyChange(propertyName, oldValue, newValue);
+    public String getFileName() {
+        return fileName;
     }
 
-    // Method to add property change listener
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
-        propertyChangeSupport.addPropertyChangeListener(listener);
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+        notifySubscribers();
     }
 
-    // Method to remove property change listener
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
-        propertyChangeSupport.removePropertyChangeListener(listener);
-    }
-
-    protected void changed() {
+    public void changed() {
         unsavedChanges = true;
-        firePropertyChange("unsavedChanges", false, true);
+        notifySubscribers();
     }
 
-    // Abstract method for model-specific operations
-    public abstract void performOperation();
+    public void subscribe(Subscriber subscriber) {
+        subscribers.add(subscriber);
+    }
+
+    public void unsubscribe(Subscriber subscriber) {
+        subscribers.remove(subscriber);
+    }
+
+    private void notifySubscribers() {
+        for (Subscriber subscriber : subscribers) {
+            subscriber.update();
+        }
+    }
 }
