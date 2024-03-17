@@ -1,4 +1,4 @@
-package stoplightSim2;
+package stopLight;
 
 
 import mvc.*;
