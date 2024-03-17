@@ -19,6 +19,7 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener {
         frame = new SafeFrame();
         Container cp = frame.getContentPane();
         cp.add(this);
+        controlPanel = new JPanel(); // Initialize the controlPanel field
         frame.setJMenuBar(createMenuBar());
         frame.setTitle(factory.getTitle());
         frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
