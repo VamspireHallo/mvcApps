@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+// rename as Controller?
 public class AppPanel extends JPanel implements Subscriber, ActionListener  {
 
     protected Model model;
