@@ -7,6 +7,6 @@ public abstract class Command {
         this.model = model;
     }
 
-    // Abstract method for executing the command
+    // Abstract method to execute the command
     public abstract void execute() throws Exception;
 }
