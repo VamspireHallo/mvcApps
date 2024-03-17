@@ -4,11 +4,23 @@ import java.util.List;
 
 public interface AppFactory {
     // Method to create a model instance
-    Model makeModel();
+    public Model makeModel();
 
-    // Method to create a view instance
-    View makeView(Model model);
+    // Create and return a new instance of the view, given the model
+    public View makeView(Model model);
 
-    // Method to create commands for the Edit menu
-    String[] getEditCommands();
+    // Get the edit commands available in the application
+    public String[] getEditCommands();
+
+    // Create and return a command object based on the command type and source
+    public Command makeEditCommand(Model model, String type, Object source);
+
+    // Get the title of the application
+    public String getTitle();
+
+    // Get the help information for the application
+    public String[] getHelp();
+
+    // Get information about the application
+    public String about();
 }
