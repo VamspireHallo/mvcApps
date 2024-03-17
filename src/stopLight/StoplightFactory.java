@@ -26,7 +26,7 @@ public class StoplightFactory implements AppFactory {
     }
 
     public String about() {
-        return "Stoplight Simulator version 1.0. Copyright 2020 by Cyberdellic Designs";
+        return "Stoplight Simulator version 2.0. Copyright 2020 by Cyberdellic Designs";
     }
 
 }
