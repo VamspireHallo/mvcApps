@@ -4,8 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-// rename as Controller?
-public class AppPanel extends JPanel implements Subscriber, ActionListener  {
+public class AppPanel extends JPanel implements Subscriber, ActionListener {
 
     protected Model model;
     protected AppFactory factory;
@@ -16,9 +15,7 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener  {
     public static int FRAME_HEIGHT = 300;
 
     public AppPanel(AppFactory factory) {
-
-        // initialize fields here
-
+        this.factory = factory; // Assign the factory parameter to the field
         frame = new SafeFrame();
         Container cp = frame.getContentPane();
         cp.add(this);
@@ -27,11 +24,17 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener  {
         frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
     }
 
-    public void display() { frame.setVisible(true); }
+    public void display() {
+        frame.setVisible(true);
+    }
 
-    public void update() {  /* override in extensions if needed */ }
+    public void update() {
+        /* override in extensions if needed */
+    }
 
-    public Model getModel() { return model; }
+    public Model getModel() {
+        return model;
+    }
 
     // called by file/open and file/new
     public void setModel(Model newModel) {
@@ -47,15 +50,17 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener  {
         JMenuBar result = new JMenuBar();
         // add file, edit, and help menus
         JMenu fileMenu =
-                Utilities.makeMenu("File", new String[] {"New",  "Save", "SaveAs", "Open", "Quit"}, this);
+                Utilities.makeMenu("File", new String[]{"New", "Save", "SaveAs", "Open", "Quit"}, this);
         result.add(fileMenu);
 
-        JMenu editMenu =
-                Utilities.makeMenu("Edit", factory.getEditCommands(), this);
-        result.add(editMenu);
+        if (factory != null) { // Check if factory is not null
+            JMenu editMenu =
+                    Utilities.makeMenu("Edit", factory.getEditCommands(), this);
+            result.add(editMenu);
+        }
 
         JMenu helpMenu =
-                Utilities.makeMenu("Help", new String[] {"About", "Help"}, this);
+                Utilities.makeMenu("Help", new String[]{"About", "Help"}, this);
         result.add(helpMenu);
 
         return result;
@@ -85,7 +90,7 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener  {
             } else if (cmmd.equals("Help")) {
                 Utilities.inform(factory.getHelp());
             } else { // must be from Edit menu
-                //???
+                factory.makeEditCommand(model, cmmd, this).execute();
             }
         } catch (Exception e) {
             handleException(e);
