@@ -1,7 +1,5 @@
 package mvc;
 
-import java.util.List;
-
 public interface AppFactory {
     // Method to create a model instance
     public Model makeModel();

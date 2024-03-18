@@ -9,6 +9,7 @@ public class View extends JPanel implements Subscriber {
     public View(Model model) {
         this.model = model;
         model.subscribe(this);
+        setBackground(Color.LIGHT_GRAY);
     }
 
     public void setModel(Model model) {
@@ -16,17 +17,6 @@ public class View extends JPanel implements Subscriber {
         this.model = model;
         model.subscribe(this);
         repaint();
-    }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        // Draw the view based on the model's data
-        // For simplicity, let's just draw a text indicating the unsaved changes
-        if (model.getUnsavedChanges()) {
-            g.setColor(Color.RED);
-            g.drawString("Unsaved Changes", 10, 20);
-        }
     }
 
     @Override

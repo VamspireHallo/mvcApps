@@ -15,6 +15,7 @@ public class StoplightPanel extends AppPanel {
         controlPanel.add(change);
     }
 
+
     public static void main(String[] args) {
         AppFactory factory = new StoplightFactory();
         AppPanel panel = new StoplightPanel(factory);
