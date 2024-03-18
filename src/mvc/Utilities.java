@@ -52,7 +52,7 @@ public class Utilities {
     }
 
     // asks user to save changes
-    public static void saveChanges(Model model) throws IOException {
+    public static void saveChanges(Model model) {
         if (model.getUnsavedChanges() &&
                 !Utilities.confirm("current model has unsaved changes, continue?")) {
             Utilities.save(model, false);
@@ -82,15 +82,25 @@ public class Utilities {
     }
 
     // save model
-    public static void save(Model model, Boolean saveAs) throws IOException {
-        String fName = Utilities.getFileName((String) null, false);
-        ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(fName));
-        os.writeObject(model);
-        os.close();
+    public static void save(Model model, Boolean saveAs) {
+        String fName = model.getFileName();
+        if (fName == null || saveAs) {
+            fName = getFileName(fName, false);
+            model.setFileName(fName);
+        }
+        try {
+            ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(fName));
+            model.setUnsavedChanges(false);
+            os.writeObject(model);
+            os.close();
+        } catch (Exception err) {
+            model.setUnsavedChanges(true);
+            Utilities.error(err);
+        }
     }
 
     // open model
-    public static Model open(Model model) throws IOException {
+    public static Model open(Model model) {
         saveChanges(model);
         String fName = getFileName(model.getFileName(), true);
         Model newModel = null;

@@ -1,17 +1,16 @@
 package mvc;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Model {
+public class Model extends Publisher implements Serializable {
     private boolean unsavedChanges;
     private String fileName;
-    private List<Subscriber> subscribers;
 
     public Model() {
         this.unsavedChanges = false;
         this.fileName = null;
-        this.subscribers = new ArrayList<>();
     }
 
     public boolean getUnsavedChanges() {
@@ -20,7 +19,7 @@ public class Model {
 
     public void setUnsavedChanges(boolean unsavedChanges) {
         this.unsavedChanges = unsavedChanges;
-        notifySubscribers();
+        this.notifySubscribers();
     }
 
     public String getFileName() {
@@ -29,25 +28,11 @@ public class Model {
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
-        notifySubscribers();
+        this.notifySubscribers();
     }
 
     public void changed() {
         unsavedChanges = true;
-        notifySubscribers();
-    }
-
-    public void subscribe(Subscriber subscriber) {
-        subscribers.add(subscriber);
-    }
-
-    public void unsubscribe(Subscriber subscriber) {
-        subscribers.remove(subscriber);
-    }
-
-    private void notifySubscribers() {
-        for (Subscriber subscriber : subscribers) {
-            subscriber.update();
-        }
+        this.notifySubscribers();
     }
 }
