@@ -1,0 +1,216 @@
+Index: src/mvc/AppFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mvc;\r\n\r\nimport java.util.List;\r\n\r\npublic interface AppFactory {\r\n    // Method to create a model instance\r\n    public Model makeModel();\r\n\r\n    // Create and return a new instance of the view, given the model\r\n    public View makeView(Model model);\r\n\r\n    // Get the edit commands available in the application\r\n    public String[] getEditCommands();\r\n\r\n    // Create and return a command object based on the command type and source\r\n    public Command makeEditCommand(Model model, String type, Object source);\r\n\r\n    // Get the title of the application\r\n    public String getTitle();\r\n\r\n    // Get the help information for the application\r\n    public String[] getHelp();\r\n\r\n    // Get information about the application\r\n    public String about();\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/mvc/AppFactory.java b/src/mvc/AppFactory.java
+--- a/src/mvc/AppFactory.java	(revision 1a96198937c1fa4717e9b6b8cd3cdfefd6c33df3)
++++ b/src/mvc/AppFactory.java	(date 1710650795645)
+@@ -1,7 +1,5 @@
+ package mvc;
+ 
+-import java.util.List;
+-
+ public interface AppFactory {
+     // Method to create a model instance
+     public Model makeModel();
+Index: src/stopLight/StoplightPanel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package stopLight;\r\n\r\nimport java.awt.*;\r\nimport javax.swing.*;\r\n\r\nimport mvc.*;\r\n\r\n\r\npublic class StoplightPanel extends AppPanel {\r\n    private JButton change;\r\n    public StoplightPanel(AppFactory factory) {\r\n        super(factory);\r\n        change = new JButton(\"Change\");\r\n        change.addActionListener(this);\r\n        controlPanel.add(change);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        AppFactory factory = new StoplightFactory();\r\n        AppPanel panel = new StoplightPanel(factory);\r\n        panel.display();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/stopLight/StoplightPanel.java b/src/stopLight/StoplightPanel.java
+--- a/src/stopLight/StoplightPanel.java	(revision 1a96198937c1fa4717e9b6b8cd3cdfefd6c33df3)
++++ b/src/stopLight/StoplightPanel.java	(date 1710652379827)
+@@ -15,6 +15,7 @@
+         controlPanel.add(change);
+     }
+ 
++
+     public static void main(String[] args) {
+         AppFactory factory = new StoplightFactory();
+         AppPanel panel = new StoplightPanel(factory);
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"58a0ad15-90cb-424b-9121-6abcc73bb36f\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/mvc/AppFactory.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/mvc/AppFactory.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/mvc/AppPanel.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/mvc/AppPanel.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/mvc/Command.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/mvc/Command.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/mvc/Model.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/mvc/Model.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/mvc/Utilities.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/mvc/Utilities.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/mvc/View.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/mvc/View.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/stopLight/StopLightShape.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/stopLight/StopLightShape.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 6\n}</component>\r\n  <component name=\"ProjectId\" id=\"2dOZoDVwJj9I2OnmZyBrvYIwMPA\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"Application.Main.executor\": \"Run\",\n    \"Application.StoplightPanel.executor\": \"Run\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"git-widget-placeholder\": \"main\",\n    \"kotlin-language-version-configured\": \"true\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"onboarding.tips.debug.path\": \"C:/Users/vamse/Desktop/CS151WorkSpace/mvcApps/src/Main.java\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"58a0ad15-90cb-424b-9121-6abcc73bb36f\" name=\"Changes\" comment=\"\" />\r\n      <created>1709881259722</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1709881259722</updated>\r\n      <workItem from=\"1709881260798\" duration=\"6016000\" />\r\n      <workItem from=\"1710646981679\" duration=\"2390000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1a96198937c1fa4717e9b6b8cd3cdfefd6c33df3)
++++ b/.idea/workspace.xml	(date 1710652796957)
+@@ -4,15 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="58a0ad15-90cb-424b-9121-6abcc73bb36f" name="Changes" comment="">
++    <list default="true" id="58a0ad15-90cb-424b-9121-6abcc73bb36f" name="Changes" comment="Updating mvc to match spotlight">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/mvc/AppPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/mvc/AppPanel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/stopLight/StoplightPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/stopLight/StoplightPanel.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/mvc/AppFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/AppFactory.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/mvc/AppPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/AppPanel.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/mvc/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/Command.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/mvc/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/Model.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/mvc/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/Utilities.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/mvc/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/View.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/stopLight/StopLightShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stopLight/StopLightShape.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/stopLight/StoplightPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stopLight/StoplightPanel.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -27,6 +25,7 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="PUSH_AUTO_UPDATE" value="true" />
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProjectColorInfo">{
+@@ -44,8 +43,10 @@
+     "Application.StoplightPanel.executor": "Run",
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "git-widget-placeholder": "main",
+     "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "C:/Users/vamse/Downloads/mvcApps-master",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+@@ -71,8 +72,33 @@
+       <option name="presentableId" value="Default" />
+       <updated>1709881259722</updated>
+       <workItem from="1709881260798" duration="6016000" />
+-      <workItem from="1710646981679" duration="2390000" />
++      <workItem from="1710646981679" duration="5793000" />
++    </task>
++    <task id="LOCAL-00001" summary="Updating mvc to match spotlight">
++      <option name="closed" value="true" />
++      <created>1710649398066</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1710649398066</updated>
++    </task>
++    <task id="LOCAL-00002" summary="Updating mvc to match spotlight">
++      <option name="closed" value="true" />
++      <created>1710649409400</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1710649409400</updated>
++    </task>
++    <task id="LOCAL-00003" summary="Updating mvc to match spotlight">
++      <option name="closed" value="true" />
++      <created>1710649439919</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1710649439919</updated>
+     </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -89,4 +115,8 @@
+       </map>
+     </option>
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Updating mvc to match spotlight" />
++    <option name="LAST_COMMIT_MESSAGE" value="Updating mvc to match spotlight" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: src/mvc/AppPanel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mvc;\r\n\r\nimport java.awt.*;\r\nimport java.awt.event.*;\r\nimport javax.swing.*;\r\n\r\n// rename as Controller?\r\npublic class AppPanel extends JPanel implements Subscriber, ActionListener  {\r\n\r\n    protected Model model;\r\n    protected AppFactory factory;\r\n    protected View view;\r\n    protected JPanel controlPanel;\r\n    private JFrame frame;\r\n    public static int FRAME_WIDTH = 500;\r\n    public static int FRAME_HEIGHT = 300;\r\n\r\n    public AppPanel(AppFactory factory) {\r\n\r\n        // initialize fields here\r\n\r\n        frame = new SafeFrame();\r\n        Container cp = frame.getContentPane();\r\n        cp.add(this);\r\n        frame.setJMenuBar(createMenuBar());\r\n        frame.setTitle(factory.getTitle());\r\n        frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);\r\n    }\r\n\r\n    public void display() { frame.setVisible(true); }\r\n\r\n    public void update() {  /* override in extensions if needed */ }\r\n\r\n    public Model getModel() { return model; }\r\n\r\n    // called by file/open and file/new\r\n    public void setModel(Model newModel) {\r\n        this.model.unsubscribe(this);\r\n        this.model = newModel;\r\n        this.model.subscribe(this);\r\n        // view must also unsubscribe then resubscribe:\r\n        view.setModel(this.model);\r\n        model.changed();\r\n    }\r\n\r\n    protected JMenuBar createMenuBar() {\r\n        JMenuBar result = new JMenuBar();\r\n        // add file, edit, and help menus\r\n        JMenu fileMenu =\r\n                Utilities.makeMenu(\"File\", new String[] {\"New\",  \"Save\", \"SaveAs\", \"Open\", \"Quit\"}, this);\r\n        result.add(fileMenu);\r\n\r\n        JMenu editMenu =\r\n                Utilities.makeMenu(\"Edit\", factory.getEditCommands(), this);\r\n        result.add(editMenu);\r\n\r\n        JMenu helpMenu =\r\n                Utilities.makeMenu(\"Help\", new String[] {\"About\", \"Help\"}, this);\r\n        result.add(helpMenu);\r\n\r\n        return result;\r\n    }\r\n\r\n    public void actionPerformed(ActionEvent ae) {\r\n        try {\r\n            String cmmd = ae.getActionCommand();\r\n\r\n            if (cmmd.equals(\"Save\")) {\r\n                Utilities.save(model, false);\r\n            } else if (cmmd.equals(\"SaveAs\")) {\r\n                Utilities.save(model, true);\r\n            } else if (cmmd.equals(\"Open\")) {\r\n                Model newModel = Utilities.open(model);\r\n                if (newModel != null) setModel(newModel);\r\n            } else if (cmmd.equals(\"New\")) {\r\n                Utilities.saveChanges(model);\r\n                setModel(factory.makeModel());\r\n                // needed cuz setModel sets to true:\r\n                model.setUnsavedChanges(false);\r\n            } else if (cmmd.equals(\"Quit\")) {\r\n                Utilities.saveChanges(model);\r\n                System.exit(0);\r\n            } else if (cmmd.equals(\"About\")) {\r\n                Utilities.inform(factory.about());\r\n            } else if (cmmd.equals(\"Help\")) {\r\n                Utilities.inform(factory.getHelp());\r\n            } else { // must be from Edit menu\r\n                //???\r\n            }\r\n        } catch (Exception e) {\r\n            handleException(e);\r\n        }\r\n    }\r\n\r\n    protected void handleException(Exception e) {\r\n        Utilities.error(e);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/mvc/AppPanel.java b/src/mvc/AppPanel.java
+--- a/src/mvc/AppPanel.java	(revision 1a96198937c1fa4717e9b6b8cd3cdfefd6c33df3)
++++ b/src/mvc/AppPanel.java	(date 1710652796824)
+@@ -4,8 +4,7 @@
+ import java.awt.event.*;
+ import javax.swing.*;
+ 
+-// rename as Controller?
+-public class AppPanel extends JPanel implements Subscriber, ActionListener  {
++public class AppPanel extends JPanel implements Subscriber, ActionListener {
+ 
+     protected Model model;
+     protected AppFactory factory;
+@@ -16,22 +15,27 @@
+     public static int FRAME_HEIGHT = 300;
+ 
+     public AppPanel(AppFactory factory) {
+-
+-        // initialize fields here
+-
++        this.factory = factory; // Assign the factory parameter to the field
+         frame = new SafeFrame();
+         Container cp = frame.getContentPane();
+         cp.add(this);
++        controlPanel = new JPanel(); // Initialize the controlPanel field
+         frame.setJMenuBar(createMenuBar());
+         frame.setTitle(factory.getTitle());
+         frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+     }
+ 
+-    public void display() { frame.setVisible(true); }
++    public void display() {
++        frame.setVisible(true);
++    }
+ 
+-    public void update() {  /* override in extensions if needed */ }
++    public void update() {
++        /* override in extensions if needed */
++    }
+ 
+-    public Model getModel() { return model; }
++    public Model getModel() {
++        return model;
++    }
+ 
+     // called by file/open and file/new
+     public void setModel(Model newModel) {
+@@ -47,15 +51,17 @@
+         JMenuBar result = new JMenuBar();
+         // add file, edit, and help menus
+         JMenu fileMenu =
+-                Utilities.makeMenu("File", new String[] {"New",  "Save", "SaveAs", "Open", "Quit"}, this);
++                Utilities.makeMenu("File", new String[]{"New", "Save", "SaveAs", "Open", "Quit"}, this);
+         result.add(fileMenu);
+ 
+-        JMenu editMenu =
+-                Utilities.makeMenu("Edit", factory.getEditCommands(), this);
+-        result.add(editMenu);
++        if (factory != null) { // Check if factory is not null
++            JMenu editMenu =
++                    Utilities.makeMenu("Edit", factory.getEditCommands(), this);
++            result.add(editMenu);
++        }
+ 
+         JMenu helpMenu =
+-                Utilities.makeMenu("Help", new String[] {"About", "Help"}, this);
++                Utilities.makeMenu("Help", new String[]{"About", "Help"}, this);
+         result.add(helpMenu);
+ 
+         return result;
+@@ -85,7 +91,7 @@
+             } else if (cmmd.equals("Help")) {
+                 Utilities.inform(factory.getHelp());
+             } else { // must be from Edit menu
+-                //???
++                factory.makeEditCommand(model, cmmd, this).execute();
+             }
+         } catch (Exception e) {
+             handleException(e);

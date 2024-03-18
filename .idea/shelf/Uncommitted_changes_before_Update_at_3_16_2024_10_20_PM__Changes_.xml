@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_3_16_2024_10_20_PM_[Changes]" date="1710652845496" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_16_2024_10_20_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 3/16/2024 10:20 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/mvcApps/stopLight/StoplightPanel.class" />
+    <option name="AFTER_PATH" value="out/production/mvcApps/stopLight/StoplightPanel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_16_2024_10_20_PM_[Changes]/StoplightPanel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/mvcApps/mvc/AppPanel.class" />
+    <option name="AFTER_PATH" value="out/production/mvcApps/mvc/AppPanel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_16_2024_10_20_PM_[Changes]/AppPanel.class" />
+  </binary>
+</changelist>
