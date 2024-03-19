@@ -1,4 +1,10 @@
 package CALab;
 
-public class GridPanel {
+import mvc.*;
+public class GridPanel extends AppPanel{
+    public GridPanel(AppFactory factory){
+        super(factory);
+
+    }
+
 }
