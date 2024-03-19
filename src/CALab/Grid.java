@@ -2,7 +2,7 @@
 //         Grid.java
 //========================================
 
-        package CALab;
+package CALab;
 
 import java.awt.*;
 import java.util.*;
@@ -30,16 +30,37 @@ public abstract class Grid extends Model {
     protected void populate() {
         // 1. use makeCell to fill in cells
         // 2. use getNeighbors to set the neighbors field of each cell
+        for (int row = 0; row < dim; row++) {
+            for (int col = 0; col < dim; col++) {
+                cells[row][col] = this.makeCell(true);
+            }
+        }
+        changed();
+        for (int row = 0; row < dim; row++) {
+            for (int col = 0; col < dim; col++) {
+                cells[row][col].neighbors = getNeighbors(cells[row][col], 1);
+            }
+        }
     }
 
     // called when Populate and clear buttons are clicked
     public void repopulate(boolean randomly) {
         if (randomly) {
-            // randomly set the status of each cell
+            for (int row = 0; row < dim; row++) {
+                for (int col = 0; col < dim; col++) {
+                    cells[row][col].reset(randomly);
+                }
+            }
         } else {
             // set the status of each cell to 0 (dead)
+            for (int row = 0; row < dim; row++) {
+                for (int col = 0; col < dim; col++) {
+                    cells[row][col].reset(false);
+                }
+            }
         }
         // notify subscribers
+        changed();
     }
 
 
@@ -50,7 +71,15 @@ public abstract class Grid extends Model {
         Tricky part: cells in row/col 0 or dim - 1.
         The asker is not a neighbor of itself.
         */
-        return null; // Under construction
+        Set<Cell> neighbors = new HashSet<>();
+        for (int row = Math.max(0, asker.row - radius); row <= Math.min(dim - 1, asker.row + radius); row++) {
+            for (int col = Math.max(0, asker.col - radius); col <= Math.min(dim - 1, asker.col + radius); col++) {
+                if (Math.abs(row - asker.row) + Math.abs(col - asker.col) <= radius) {
+                    neighbors.add(cells[row][col]);
+                }
+            }
+        }
+        return neighbors;
     }
 
 
@@ -58,14 +87,30 @@ public abstract class Grid extends Model {
 
     public void observe() {
         // call each cell's observe method and notify subscribers
+        for (int row = 0; row < dim; row++) {
+            for (int col = 0; col < dim; col++) {
+                cells[row][col].observe();
+            }
+        }
+        changed();
     }
 
     public void interact() {
-        // ???
+        for (int row = 0; row < dim; row++) {
+            for (int col = 0; col < dim; col++) {
+                cells[row][col].interact();
+            }
+        }
+        changed();
     }
 
     public void update() {
-        // ???
+        for (int row = 0; row < dim; row++) {
+            for (int col = 0; col < dim; col++) {
+                cells[row][col].interact();
+            }
+        }
+        changed();
     }
 
     public void updateLoop(int cycles) {

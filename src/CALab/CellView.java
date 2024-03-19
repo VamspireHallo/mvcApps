@@ -2,7 +2,7 @@
 //         GrCellView.java
 //========================================
 
-        package CALab;
+package CALab;
 
 import javax.swing.*;
 import java.awt.*;
