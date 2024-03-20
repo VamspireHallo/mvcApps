@@ -11,12 +11,13 @@ public class Agent extends Cell
     int ambience = 8;
 
     @Override
-    public void observe() {
-        getneighbors
+    public void observe() { //updates the ambience
+        ambience = neighbors.size();
     }
 
     @Override
-    public void interact() {
+    public void interact()
+    {
 
     }
 
@@ -54,7 +55,10 @@ public class Agent extends Cell
     {
         if (randomly == true)
         {
-            update();
+            status = 1;
+        }
+        if (randomly == false){
+            status = 0;
         }
     }
 
