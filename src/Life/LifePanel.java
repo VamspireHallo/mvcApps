@@ -3,18 +3,17 @@ package Life;
 import CALab.GridFactory;
 import mvc.AppFactory;
 import mvc.AppPanel;
-import stopLight.StoplightPanel;
 
 import javax.swing.*;
 
-public class Lifelab extends AppPanel
+public class LifePanel extends AppPanel
 {
     private JButton CLEAR;
     private JButton RUN1;
     private JButton RUN50;
     private JButton REPOPULATE;
 
-    public Lifelab(AppFactory factory) {
+    public LifePanel(AppFactory factory) {
         super(factory);
         CLEAR = new JButton("CLEAR");
         CLEAR.addActionListener(this);
@@ -31,7 +30,7 @@ public class Lifelab extends AppPanel
     }
     public static void main(String[] args) {
         GridFactory factory = new LifeFactory();
-        AppPanel panel = new Lifelab(factory);
+        AppPanel panel = new LifePanel(factory);
         panel.display();
     }
 }
