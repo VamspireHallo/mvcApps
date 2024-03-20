@@ -3,7 +3,6 @@ package Life;
 import CALab.GridFactory;
 import mvc.AppFactory;
 import mvc.AppPanel;
-import stopLight.StoplightPanel;
 
 import javax.swing.*;
 
