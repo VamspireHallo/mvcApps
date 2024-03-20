@@ -1,18 +1,15 @@
 package Life;
 
-import CALab.GridFactory;
+import CALab.*;
 import mvc.AppFactory;
 import mvc.Command;
 import mvc.Model;
 import mvc.View;
-import CALab.ClearCommand;
-import CALab.PopulateCommand;
-import CALab.RunCommand;
 
 public class LifeFactory extends GridFactory {
     @Override
     public Model makeModel() {
-        return null;
+        return new Grid();
     }
 
     @Override
