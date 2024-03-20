@@ -36,6 +36,6 @@ public class LifeFactory extends GridFactory {
 
     @Override
     public String about() {
-        return "CS 151 LifeLab Vamsee and Yossef 2024";
+        return "CS 151 LifeLab Vamsee, Yossef, and Brynt 2024";
     }
 }
