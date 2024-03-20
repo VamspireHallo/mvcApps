@@ -5,6 +5,9 @@ import mvc.AppFactory;
 import mvc.Command;
 import mvc.Model;
 import mvc.View;
+import CALab.ClearCommand;
+import CALab.PopulateCommand;
+import CALab.RunCommand;
 
 public class LifeFactory extends GridFactory {
     @Override
@@ -22,6 +25,14 @@ public class LifeFactory extends GridFactory {
 
     @Override
     public Command makeEditCommand(Model model, String type, Object source) {
+        if (type == "CLEAR")
+            return new ClearCommand(model);
+        if (type == "REPOPULATE")
+            return new PopulateCommand(model, true);
+        if (type == "RUN1")
+            return new RunCommand(model, 1);
+        if (type == "RUN50")
+            return new RunCommand(model, 50);
         return null;
     }
     @Override
