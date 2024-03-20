@@ -1,7 +1,6 @@
 package Life;
 
-import CALab.Cell;
-import CALab.CellView;
+import CALab.*;
 
 import java.awt.*;
 
@@ -12,7 +11,12 @@ public class Agent extends Cell
 
     @Override
     public void observe() { //updates the ambience
-        ambience = neighbors.size();
+        ambience = 0;
+        for (Cell a : neighbors) {
+            if (((Agent) a).getStatus() == 1) {
+                ambience++;
+            }
+        }
     }
 
     @Override
@@ -79,18 +83,7 @@ public class Agent extends Cell
     }
 
     @Override
-    public String getStatus() { //0 = dead cell which should be red. 1 = live cell which should be green
-        if (status == 0)
-        {
-            return "dead";
-        }
-        else if (status == 1)
-        {
-            return "alive";
-        }
-        else
-        {
-          return null;
-        }
+    public int getStatus() { //0 = dead cell which should be red. 1 = live cell which should be green
+        return status;
     }
 }

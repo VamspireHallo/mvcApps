@@ -1,17 +1,16 @@
 package CALab;
 
 import mvc.*;
-public class GridFactory implements AppFactory {
+
+import java.util.Random;
+
+public abstract class GridFactory implements AppFactory {
 
     @Override
-    public Model makeModel() {
-        return null;
-    }
+    public abstract Model makeModel();
 
     @Override
-    public View makeView(Model model) {
-        return null;
-    }
+    public abstract View makeView(Model model);
 
     @Override
     public String[] getEditCommands() {
@@ -19,22 +18,14 @@ public class GridFactory implements AppFactory {
     }
 
     @Override
-    public Command makeEditCommand(Model model, String type, Object source) {
-        return null;
-    }
+    public abstract Command makeEditCommand(Model model, String type, Object source);
 
     @Override
-    public String getTitle() {
-        return null;
-    }
+    public abstract String getTitle();
 
     @Override
-    public String[] getHelp() {
-        return new String[0];
-    }
+    public abstract String[] getHelp();
 
     @Override
-    public String about() {
-        return null;
-    }
+    public abstract String about();
 }

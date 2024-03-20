@@ -8,7 +8,6 @@ import java.awt.*;
 import java.util.*;
 import java.io.*;
 
-import CALab.Grid;
 import mvc.*;
 
 public abstract class Cell extends Publisher implements Serializable {
@@ -71,5 +70,5 @@ public abstract class Cell extends Publisher implements Serializable {
 
     public abstract Color getColor();
 
-    public abstract String getStatus();
+    public abstract int getStatus();
 }

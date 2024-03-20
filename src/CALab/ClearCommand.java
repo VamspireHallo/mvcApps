@@ -10,5 +10,6 @@ public class ClearCommand extends Command {
     public void execute() throws Exception {
         Grid grid = (Grid) model;
         grid.repopulate(false);
+        grid.observe();
     }
 }

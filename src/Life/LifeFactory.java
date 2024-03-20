@@ -14,7 +14,7 @@ public class LifeFactory extends GridFactory {
 
     @Override
     public View makeView(Model model) {
-        return new SocietyView((Society)m);
+        return new GridView((Society) model);
     }
 
     @Override
