@@ -10,11 +10,7 @@ public class RunCommand extends Command {
 
     @Override
     public void execute() throws Exception {
-        if (model instanceof Grid) {
-            Grid grid = (Grid) model;
-            grid.updateLoop(cycles);
-        } else {
-            System.out.println("Error: Grid Not Runnable");
-        }
+        Grid grid = (Grid) model;
+        grid.updateLoop(cycles);
     }
 }

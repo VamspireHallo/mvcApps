@@ -5,6 +5,7 @@ import mvc.AppFactory;
 import mvc.AppPanel;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class LifePanel extends AppPanel
 {
@@ -15,15 +16,18 @@ public class LifePanel extends AppPanel
 
     public LifePanel(AppFactory factory) {
         super(factory);
-        CLEAR = new JButton("CLEAR");
-        CLEAR.addActionListener(this);
-        controlPanels.add(CLEAR);
+        controlPanels.setLayout(new GridLayout(2,2,10, 10));
+
+
         RUN1 = new JButton("RUN1");
         RUN1.addActionListener(this);
         controlPanels.add(RUN1);
         RUN50 = new JButton("RUN50");
         RUN50.addActionListener(this);
         controlPanels.add(RUN50);
+        CLEAR = new JButton("CLEAR");
+        CLEAR.addActionListener(this);
+        controlPanels.add(CLEAR);
         REPOPULATE = new JButton("REPOPULATE");
         REPOPULATE.addActionListener(this);
         controlPanels.add(REPOPULATE);
