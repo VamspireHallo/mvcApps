@@ -6,7 +6,7 @@ import mvc.Model;
 public class SocietyView extends GridView
 {
 
-    public SocietyView(Model model) {
-        super(model);
+    public SocietyView(Society s) {
+        super(s);
     }
 }
