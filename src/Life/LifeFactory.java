@@ -9,7 +9,7 @@ import mvc.View;
 public class LifeFactory extends GridFactory {
     @Override
     public Model makeModel() {
-        return new Grid();
+        return new Society();
     }
 
     @Override
