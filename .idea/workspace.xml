@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58a0ad15-90cb-424b-9121-6abcc73bb36f" name="Changes" comment="Updating mvc to match spotlight">
+    <list default="true" id="58a0ad15-90cb-424b-9121-6abcc73bb36f" name="Changes" comment="Added societyView">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/Cell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/CellView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/CellView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/ClearCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/ClearCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/GridFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/GridFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/PopulateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/PopulateCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/RunCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/RunCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/mvcApps/Life/LifeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/Life/LifeFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/Life/Lifelab.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Life/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Life/Agent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,27 +42,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.LifePanel.executor": "Run",
-    "Application.Lifelab.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.StoplightPanel.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/vamse/Downloads/mvcApps-master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/vamse/Desktop/CS151WorkSpace/mvcApps/src/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.LifePanel.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Lifelab.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StoplightPanel.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/water/IdeaProjects/mvcApps11&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/vamse/Desktop/CS151WorkSpace/mvcApps/src/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="LifePanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Life.LifePanel" />
@@ -165,7 +172,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710910146184</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added societyView">
+      <option name="closed" value="true" />
+      <created>1710945580826</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710945580826</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added societyView">
+      <option name="closed" value="true" />
+      <created>1710946457590</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710946457590</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +207,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updating mvc to match spotlight" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating mvc to match spotlight" />
+    <MESSAGE value="Added societyView" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added societyView" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -3,6 +3,7 @@ package Life;
 import CALab.*;
 
 import java.awt.*;
+import java.util.Random;
 
 public class Agent extends Cell
 {
@@ -51,6 +52,10 @@ public class Agent extends Cell
             status = 0;
             getColor();
         }
+        else
+        {
+            System.out.println("status is not 1 or 0");
+        }
 
     }
 
@@ -59,7 +64,9 @@ public class Agent extends Cell
     {
         if (randomly == true)
         {
-            status = 1;
+            Random random = new Random();
+            int randomNumber = random.nextInt(2);
+            status = randomNumber;
         }
         if (randomly == false){
             status = 0;
@@ -67,7 +74,9 @@ public class Agent extends Cell
     }
 
     @Override
-    public int getAmbience() {
+    public int getAmbience()
+    {
+        observe();
         return ambience;
     }
 
@@ -83,7 +92,7 @@ public class Agent extends Cell
         }
         else
         {
-            return null;
+            return Color.BLACK;
         }
     }
 
