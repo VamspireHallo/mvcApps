@@ -39,11 +39,11 @@ public class LifeFactory extends GridFactory {
 
     @Override
     public String[] getHelp() {
-        return new String[] {"Click on repopulate to start a new grid","Click on  CLEAR to turn all the cells red", "Click RUN1 to run the simulation"};
+        return new String[] {"Click RUN1 to run the simulation 1 time", "Click RUN50 to run the simulation 50 times", "Click on REPOPULATE to start a new grid","Click on  CLEAR to turn all the cells red"};
     }
 
     @Override
     public String about() {
-        return "CS 151 LifeLab Vamsee, Yossef, and Brynt 2024";
+        return "CS 151 Life Lab, Group 12, Vamsee, Yossef, and Brynt 2024";
     }
 }

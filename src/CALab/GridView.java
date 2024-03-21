@@ -48,4 +48,9 @@ public class GridView  extends View {
         }
     }
 
+    @Override
+    public void setModel(Model newModel) {
+
+    }
+
 }
