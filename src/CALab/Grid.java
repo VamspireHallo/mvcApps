@@ -50,6 +50,8 @@ public abstract class Grid extends Model {
             for (int row = 0; row < dim; row++) {
                 for (int col = 0; col < dim; col++) {
                     cells[row][col].reset(randomly);
+                    cells[row][col].neighbors = getNeighbors(cells[row][col], 1);
+
                 }
             }
         } else {
