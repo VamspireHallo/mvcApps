@@ -15,11 +15,7 @@ public class GridView  extends View {
 
     public GridView(Model model) {
         super(model);
-        /*
-        Cell cell = new CellView(((Grid)model).getCell(row, col)
-        cellViews[row][col] = cell
-        set cell.row and cell.col here
-        */
+
         Grid grid = (Grid) model;
         int size = grid.getDim();
         cellViews = new CellView[size][size];
@@ -27,6 +23,11 @@ public class GridView  extends View {
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
+                /*
+                Cell cell = new CellView(((Grid)model).getCell(row, col)
+                cellViews[row][col] = cell
+                set cell.row and cell.col here
+                */
                 Cell cell = grid.getCell(i, j);
                 cellViews[i][j] = new CellView(cell);
                 cell.row = i;

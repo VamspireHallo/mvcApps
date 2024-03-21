@@ -25,7 +25,7 @@ public class LifeFactory extends GridFactory {
         if (type == "CLEAR")
             return new ClearCommand(model);
         if (type == "REPOPULATE")
-            return new PopulateCommand(model, true);
+            return new PopulateCommand(model);
         if (type == "RUN1")
             return new RunCommand(model, 1);
         if (type == "RUN50")
@@ -34,7 +34,7 @@ public class LifeFactory extends GridFactory {
     }
     @Override
     public String getTitle() {
-        return "LifeLab";
+        return "Life Lab";
     }
 
     @Override
