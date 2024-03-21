@@ -67,6 +67,11 @@ public class Agent extends Cell
     }
 
     @Override
+    public int getAmbience() {
+        return ambience;
+    }
+
+    @Override
     public Color getColor() { // should be red if cell is dead and green if cell is alive
         if (status == 0)
         {

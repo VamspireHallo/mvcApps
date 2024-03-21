@@ -14,18 +14,18 @@ public abstract class Grid extends Model {
     protected int dim = 20;
     protected Cell[][] cells;
 
-    public int getDim() { return dim; }
-    public int getTime() { return time; }
-    public Cell getCell(int row, int col) { return cells[row][col]; }
-    public abstract Cell makeCell(boolean uniform);
-
-
     public Grid(int dim) {
         this.dim = dim;
         cells = new Cell[dim][dim];
         populate();
     }
-    public Grid() { this(20); }
+
+    public Grid() {this(20);}
+
+    public int getDim() { return dim; }
+    public int getTime() { return time; }
+    public Cell getCell(int row, int col) { return cells[row][col]; }
+    public abstract Cell makeCell(boolean uniform);
 
     protected void populate() {
         // 1. use makeCell to fill in cells
@@ -41,6 +41,7 @@ public abstract class Grid extends Model {
                 cells[row][col].neighbors = getNeighbors(cells[row][col], 1);
             }
         }
+        repopulate(true);
     }
 
     // called when Populate and clear buttons are clicked
@@ -74,8 +75,11 @@ public abstract class Grid extends Model {
         Set<Cell> neighbors = new HashSet<>();
         for (int row = Math.max(0, asker.row - radius); row <= Math.min(dim - 1, asker.row + radius); row++) {
             for (int col = Math.max(0, asker.col - radius); col <= Math.min(dim - 1, asker.col + radius); col++) {
-                if (Math.abs(row - asker.row) + Math.abs(col - asker.col) <= radius) {
-                    neighbors.add(cells[row][col]);
+                int wrappedRow = (row + dim) % dim;
+                int wrappedCol = (col + dim) % dim;
+
+                if (!(row == asker.row && col == asker.col)) {
+                    neighbors.add(cells[wrappedRow][wrappedCol]);
                 }
             }
         }
@@ -89,7 +93,9 @@ public abstract class Grid extends Model {
         // call each cell's observe method and notify subscribers
         for (int row = 0; row < dim; row++) {
             for (int col = 0; col < dim; col++) {
-                cells[row][col].observe();
+                Cell observedCell = cells[row][col];
+                observedCell.neighbors = getNeighbors(cells[row][col], 1);
+                observedCell.observe();
             }
         }
         changed();
@@ -107,7 +113,7 @@ public abstract class Grid extends Model {
     public void update() {
         for (int row = 0; row < dim; row++) {
             for (int col = 0; col < dim; col++) {
-                cells[row][col].interact();
+                cells[row][col].update();
             }
         }
         changed();
