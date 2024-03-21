@@ -45,18 +45,16 @@ public class Agent extends Cell
         if (status == 0)
         {
             status = 1;
-            getColor();
-        }
-        if (status == 1)
-        {
-            status = 0;
-            getColor();
         }
         else
         {
-            System.out.println("status is not 1 or 0");
+            status = 0;
         }
 
+    }
+    public void setStatus(int stat)
+    {
+        status = stat;
     }
 
     @Override

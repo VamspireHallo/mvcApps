@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58a0ad15-90cb-424b-9121-6abcc73bb36f" name="Changes" comment="Added societyView">
+    <list default="true" id="58a0ad15-90cb-424b-9121-6abcc73bb36f" name="Changes" comment="fixed repopulate button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/Cell.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/CellView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/CellView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/ClearCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/ClearCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/GridFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/GridFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/GridView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/GridView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/PopulateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/PopulateCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvcApps/CALab/RunCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/CALab/RunCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/mvcApps/Life/LifeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvcApps/Life/LifeFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/CellView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/CellView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Life/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Life/Agent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710946457590</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fixed repopulate button">
+      <option name="closed" value="true" />
+      <created>1710982970857</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710982970857</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +212,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updating mvc to match spotlight" />
     <MESSAGE value="Added societyView" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added societyView" />
+    <MESSAGE value="fixed repopulate button" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed repopulate button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
