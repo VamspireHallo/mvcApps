@@ -27,9 +27,11 @@ public class GridView  extends View {
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                CellView cell = new CellView(grid.getCell(i, j));
-                cellViews[i][j] = cell;
-                this.add(cell);
+                Cell cell = grid.getCell(i, j);
+                cellViews[i][j] = new CellView(cell);
+                cell.row = i;
+                cell.col = j;
+                this.add(cellViews[i][j]);
             }
         }
     }
