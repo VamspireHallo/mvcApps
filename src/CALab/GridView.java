@@ -50,6 +50,9 @@ public class GridView  extends View {
 
     @Override
     public void setModel(Model newModel) {
+        this.model.unsubscribe(this);
+        this.model = newModel;
+        this.model.subscribe(this);
 
     }
 
